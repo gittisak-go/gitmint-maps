@@ -1,0 +1,24 @@
+site_name: "GitMint Maps — Wiki"
+site_description: "เอกสารโครงการ GitMint Maps (ภาษาไทย)"
+site_author: "gittisak-go"
+theme:
+  name: material
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+nav:
+  - หน้าแรก: index.md
+  - เริ่มต้นใช้งาน: getting-started.md
+  - การพัฒนา:
+    - การตั้งค่าสภาพแวดล้อม: dev-setup.md
+    - โครงสร้างโค้ด: architecture.md
+  - การปฏิบัติการ: ops.md
+  - การมีส่วนร่วม: contributing.md
+  - ประวัติการเปลี่ยนแปลง: changelog.md
+plugins:
+  - search
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - toc:
+      permalink: true
