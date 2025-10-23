@@ -1,0 +1,792 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="เอกสารโครงการ GitMint Maps (ภาษาไทย)">
+      
+      
+        <meta name="author" content="gittisak-go">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title><APIProvider> Component - GitMint Maps — Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#apiprovider-component" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="GitMint Maps — Wiki" class="md-header__button md-logo" aria-label="GitMint Maps — Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GitMint Maps — Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              &lt;APIProvider&gt; Component
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="GitMint Maps — Wiki" class="md-nav__button md-logo" aria-label="GitMint Maps — Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    GitMint Maps — Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    หน้าแรก
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    เริ่มต้นใช้งาน
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    การพัฒนา
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            การพัฒนา
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dev-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    การตั้งค่าสภาพแวดล้อม
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    โครงสร้างโค้ด
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    การปฏิบัติการ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    การมีส่วนร่วม
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ประวัติการเปลี่ยนแปลง
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#props" class="md-nav__link">
+    <span class="md-ellipsis">
+      Props
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Props">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Required">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apikey-string-required-first-render-only-apikey" class="md-nav__link">
+    <span class="md-ellipsis">
+      apiKey: string (required, first-render only) {#apiKey}
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-string-first-render-only-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      version: string (first-render only) {#version}
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#region-string-first-render-only-region" class="md-nav__link">
+    <span class="md-ellipsis">
+      region: string (first-render only) {#region}
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#language-string-first-render-only-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      language: string (first-render only) {#language}
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authreferrerpolicy-string-first-render-only-authreferrerpolicy" class="md-nav__link">
+    <span class="md-ellipsis">
+      authReferrerPolicy: string (first-render only) {#authReferrerPolicy}
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libraries-string-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      libraries: string[] {#libraries}
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      channel: number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solutionchannel-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      solutionChannel: string
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Events
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#onload-void-onload" class="md-nav__link">
+    <span class="md-ellipsis">
+      onLoad: () =&gt; void {#onLoad}
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onerror-error-unknown-void-onerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      onError: (error: unknown) =&gt; void {#onError}
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hooks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Source
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="apiprovider-component"><code>&lt;APIProvider&gt;</code> Component<a class="headerlink" href="#apiprovider-component" title="Permanent link">&para;</a></h1>
+<p>The <code>APIProvider</code> is our component to load the Google Maps JavaScript API.
+Besides that, it provides context information and functions for the other
+components and hooks of this library.</p>
+<p>It can be added at any level of the application (typically somewhere
+at the top of your component-tree), and it will render all child components
+unmodified. A re-render is only triggered once the loading status of the
+Maps JavaScript API changes.</p>
+<p>Normally, there should only be a single instance of the APIProvider in a page,
+but there are situations (e.g., multiple React render-roots in a page) where
+this isn't possible. In those cases, make sure to create all <code>APIProvider</code>
+components using the exact same props, since only the first one to
+render will actually load the maps API.</p>
+<p>When the Maps JavaScript API has already been loaded externally
+(i.e., the <a href="https://developers.google.com/maps/documentation/javascript/load-maps-js-api#dynamic-library-import"><code>google.maps.importLibrary</code></a> function exists),
+the
+<code>APIProvider</code> will ignore all specified props and use the existing
+<code>importLibrary</code> function.</p>
+<p>:::info[Important]</p>
+<p>The Maps JavaScript API can only be loaded once, and settings like the
+language and region cannot be changed after loading. Therefore, it is
+important to make sure the props are specified with their final values when
+the <code>APIProvider</code> component is first rendered. Changing these props after the
+first render will in most cases have no effect, cause an error, or both.</p>
+<p>:::</p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p>The <code>APIProvider</code> only needs the <a href="https://developers.google.com/maps/documentation/javascript/get-api-key">Google Maps Platform API Key</a> to function.
+This has to be provided via the <code>apiKey</code> prop:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">APIProvider</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@vis.gl/react-google-maps&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="p">&lt;</span><span class="nt">APIProvider</span><span class="w"> </span><span class="na">apiKey</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Your API key here&#39;</span><span class="p">}&gt;</span>
+<span class="w">    </span><span class="p">{</span><span class="cm">/* ... any components ... */</span><span class="p">}</span>
+<span class="w">  </span><span class="p">&lt;/</span><span class="nt">APIProvider</span><span class="p">&gt;</span>
+<span class="p">);</span>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">App</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="props">Props<a class="headerlink" href="#props" title="Permanent link">&para;</a></h2>
+<p>The props are based on <a href="https://developers.google.com/maps/documentation/javascript/load-maps-js-api#required_parameters">the parameters</a> available for the
+'Dynamic Library Import' API which we are using under the hood.</p>
+<p>:::note</p>
+<p>Most of the props below are marked with 'first-render only',
+which refers to the fact that these can only be specified on
+first render, later changes to the values will have no effect.</p>
+<p>:::</p>
+<h3 id="required">Required<a class="headerlink" href="#required" title="Permanent link">&para;</a></h3>
+<h4 id="apikey-string-required-first-render-only-apikey"><code>apiKey</code>: string (required, first-render only) {#apiKey}<a class="headerlink" href="#apikey-string-required-first-render-only-apikey" title="Permanent link">&para;</a></h4>
+<p>The API Key for the Maps JavaScript API.</p>
+<h3 id="optional">Optional<a class="headerlink" href="#optional" title="Permanent link">&para;</a></h3>
+<h4 id="version-string-first-render-only-version"><code>version</code>: string (first-render only) {#version}<a class="headerlink" href="#version-string-first-render-only-version" title="Permanent link">&para;</a></h4>
+<p>The <a href="https://developers.google.com/maps/documentation/javascript/versions">version</a> to load (defaults to <code>weekly</code>).</p>
+<h4 id="region-string-first-render-only-region"><code>region</code>: string (first-render only) {#region}<a class="headerlink" href="#region-string-first-render-only-region" title="Permanent link">&para;</a></h4>
+<p>The <a href="https://developers.google.com/maps/documentation/javascript/localization#Region">region code</a> to use. This alters the map's behavior based on a
+given country or territory. Quoting <a href="https://developers.google.com/maps/documentation/javascript/localization#Region">the official docs</a>:</p>
+<blockquote>
+<p>As the developer of a Maps JavaScript API application, you are encouraged
+to always set a region parameter as various services (such as Places
+Autocomplete) tend to provide better results when the region is set.</p>
+<p>It is also your responsibility to ensure that your application complies with
+local laws by ensuring that the correct region localization is applied for the
+country in which the application is hosted.</p>
+</blockquote>
+<h4 id="language-string-first-render-only-language"><code>language</code>: string (first-render only) {#language}<a class="headerlink" href="#language-string-first-render-only-language" title="Permanent link">&para;</a></h4>
+<p>The language to use.
+This affects all text-content on the map, and the responses to service requests.
+The default value is determined per user based on HTTP-headers sent by the Browser.</p>
+<h4 id="authreferrerpolicy-string-first-render-only-authreferrerpolicy"><code>authReferrerPolicy</code>: string (first-render only) {#authReferrerPolicy}<a class="headerlink" href="#authreferrerpolicy-string-first-render-only-authreferrerpolicy" title="Permanent link">&para;</a></h4>
+<p>If your API key is configured for an entire subdomain,
+you can set <code>authReferrerPolicy: "origin"</code> to limit the amount of data sent
+when authorizing requests from the Maps JavaScript API.</p>
+<h4 id="libraries-string-libraries"><code>libraries</code>: string[] {#libraries}<a class="headerlink" href="#libraries-string-libraries" title="Permanent link">&para;</a></h4>
+<p>A list of <a href="https://developers.google.com/maps/documentation/javascript/libraries">libraries</a> to load immediately
+(libraries can also be loaded later with the <code>useMapsLibrary</code> hook).</p>
+<h4 id="channel-number"><code>channel</code>: number<a class="headerlink" href="#channel-number" title="Permanent link">&para;</a></h4>
+<p>To track usage of Google Maps JavaScript API via numeric channels. The only acceptable channel values are numbers from 0-999. Read more in the <a href="https://developers.google.com/maps/reporting-and-monitoring/reporting#usage-tracking-per-channel">documentation</a>.</p>
+<h4 id="solutionchannel-string"><code>solutionChannel</code>: string<a class="headerlink" href="#solutionchannel-string" title="Permanent link">&para;</a></h4>
+<p>To help Google to better understand types of usage of the Google Maps
+JavaScript API, the query parameter <code>solution_channel</code> can be set when
+loading the API.</p>
+<p>The <code>@vis.gl/react-google-maps</code> library will by default set
+this to a generic value unique to this library (<code>GMP_VISGL_react</code>). You may
+opt out at any time by setting this prop to an empty string.
+Read more in the <a href="https://developers.google.com/maps/reporting-and-monitoring/reporting#solutions-usage">documentation</a>.</p>
+<h3 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h3>
+<h4 id="onload-void-onload"><code>onLoad</code>: () =&gt; void {#onLoad}<a class="headerlink" href="#onload-void-onload" title="Permanent link">&para;</a></h4>
+<p>a callback that is called once the Maps JavaScript
+API finished loading.</p>
+<h4 id="onerror-error-unknown-void-onerror"><code>onError</code>: (error: unknown) =&gt; void {#onError}<a class="headerlink" href="#onerror-error-unknown-void-onerror" title="Permanent link">&para;</a></h4>
+<p>a callback that is called if there is an error loading
+the Google Maps JavaScript API.</p>
+<h2 id="context">Context<a class="headerlink" href="#context" title="Permanent link">&para;</a></h2>
+<p>The APIProvider creates a context value <code>APIProviderContext</code> to be used by
+the hooks and components in this library.
+The context contains functions and data needed to register and retrieve
+map-instances, libraries and the loading-status.</p>
+<p>:::note</p>
+<p>Client code should never need to interact with the context directly, always
+use the corresponding hooks instead.
+If you feel like you need to directly access the context, please <a href="https://github.com/visgl/react-google-maps/issues/new/choose">file a
+bug report or feature request</a> about this.</p>
+<p>:::</p>
+<h2 id="hooks">Hooks<a class="headerlink" href="#hooks" title="Permanent link">&para;</a></h2>
+<p>The following hooks are built to work with the <code>APIProvider</code> Component:</p>
+<ul>
+<li><a href="../../hooks/use-api-is-loaded/"><code>useApiIsLoaded()</code></a> and <a href="../../hooks/use-api-loading-status/"><code>useApiLoadingState()</code></a> to check the current loading state of the API.</li>
+<li><a href="../../hooks/use-maps-library/"><code>useMapsLibrary()</code></a> to load additional <a href="https://developers.google.com/maps/documentation/javascript/libraries">Maps Libraries</a>.</li>
+</ul>
+<h2 id="source">Source<a class="headerlink" href="#source" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/visgl/react-google-maps/blob/main/src/components/api-provider.tsx"><code>src/components/api-provider.tsx</code></a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

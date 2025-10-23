@@ -1,0 +1,62 @@
+[
+  {
+    "type": "category",
+    "label": "Overview",
+    "items": [
+      "README",
+      "get-started",
+      "whats-new",
+      "upgrade-guide",
+      "contributing"
+    ]
+  },
+  {
+    "type": "category",
+    "label": "Guides",
+    "items": [
+      "guides/interacting-with-google-maps-api",
+      "guides/deckgl-integration",
+      "guides/ssr-and-frameworks",
+      "guides/writing-examples",
+      "guides/migrating-from-react-wrapper"
+    ]
+  },
+  {
+    "type": "category",
+    "label": "API Reference",
+    "collapsible": true,
+    "collapsed": true,
+    "items": [
+      {
+        "type": "category",
+        "label": "Components",
+        "collapsible": true,
+        "collapsed": true,
+
+        "items": [
+          "api-reference/components/api-provider",
+          "api-reference/components/map",
+          "api-reference/components/map-control",
+          "api-reference/components/info-window",
+          "api-reference/components/marker",
+          "api-reference/components/advanced-marker",
+          "api-reference/components/pin",
+          "api-reference/components/static-map"
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Hooks",
+        "collapsible": true,
+        "collapsed": true,
+
+        "items": [
+          "api-reference/hooks/use-map",
+          "api-reference/hooks/use-maps-library",
+          "api-reference/hooks/use-api-is-loaded",
+          "api-reference/hooks/use-api-loading-status"
+        ]
+      }
+    ]
+  }
+]

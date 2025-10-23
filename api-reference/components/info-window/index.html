@@ -1,0 +1,904 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="เอกสารโครงการ GitMint Maps (ภาษาไทย)">
+      
+      
+        <meta name="author" content="gittisak-go">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title><InfoWindow> Component - GitMint Maps — Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#infowindow-component" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="GitMint Maps — Wiki" class="md-header__button md-logo" aria-label="GitMint Maps — Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GitMint Maps — Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              &lt;InfoWindow&gt; Component
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="GitMint Maps — Wiki" class="md-nav__button md-logo" aria-label="GitMint Maps — Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    GitMint Maps — Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    หน้าแรก
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    เริ่มต้นใช้งาน
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    การพัฒนา
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            การพัฒนา
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dev-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    การตั้งค่าสภาพแวดล้อม
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    โครงสร้างโค้ด
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    การปฏิบัติการ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    การมีส่วนร่วม
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ประวัติการเปลี่ยนแปลง
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimal-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimal Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infowindow-attached-to-marker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infowindow Attached to Marker
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#props" class="md-nav__link">
+    <span class="md-ellipsis">
+      Props
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Props">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Props
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Props">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#position-googlemapslatlngliteral" class="md-nav__link">
+    <span class="md-ellipsis">
+      position: google.maps.LatLngLiteral
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anchor-googlemapsmarker-googlemapsmarkeradvancedmarkerelement" class="md-nav__link">
+    <span class="md-ellipsis">
+      anchor: google.maps.Marker | google.maps.marker.AdvancedMarkerElement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zindex-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      zIndex: number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixeloffset-number-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      pixelOffset: [number, number]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disableautopan-boolean" class="md-nav__link">
+    <span class="md-ellipsis">
+      disableAutoPan: boolean
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shouldfocus-boolean" class="md-nav__link">
+    <span class="md-ellipsis">
+      shouldFocus: boolean
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content Props
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Content Props">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classname-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      className: string
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#style-cssproperties" class="md-nav__link">
+    <span class="md-ellipsis">
+      style: CSSProperties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arialabel-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      ariaLabel: string
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minwidth-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      minWidth: number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maxwidth-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      maxWidth: number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#headercontent-string-reactreactnode" class="md-nav__link">
+    <span class="md-ellipsis">
+      headerContent: string | React.ReactNode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#headerdisabled-boolean" class="md-nav__link">
+    <span class="md-ellipsis">
+      headerDisabled: boolean
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Events
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#onclose-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      onClose: () =&gt; void
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oncloseclick-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      onCloseClick: () =&gt; void
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="infowindow-component"><code>&lt;InfoWindow&gt;</code> Component<a class="headerlink" href="#infowindow-component" title="Permanent link">&para;</a></h1>
+<p><a href="https://developers.google.com/maps/documentation/javascript/infowindows">InfoWindows</a> are small, temporary overlays on the map that
+are typically used to display additional bits of information for locations on
+the map – for example, to add a label or image to a marker. They can be
+freely positioned on the map, or they can be "anchored" to a marker.</p>
+<p>Any JSX element added to the InfoWindow component as children will get
+rendered into the content area of the InfoWindow.</p>
+<p>When an <code>InfoWindow</code> is shown, the map will make sure to reposition the viewport
+such that the InfoWindow is well visible within the map container (this can
+be controlled using the <a href="#disableautopan-boolean"><code>disableAutoPan</code></a> prop).</p>
+<p>InfoWindows always use the same well-known styling and are limited in how much
+their look and feel can be customized.</p>
+<p>:::note</p>
+<p>By default, the rendered InfoWindow includes a close-button that can't be
+controlled via the Maps JavaScript API. There are also situations where the
+map itself will close the InfoWindow (for example, when the InfoWindows
+anchor is removed). This means that the application doesn't always have full
+control over the visibility of the InfoWindow.</p>
+<p>To keep your state in sync with the map, you have to provide a listener for the
+<code>onClose</code> event so the application knows when then InfoWindow was closed by
+the map or the user.</p>
+<p>:::</p>
+<p>:::tip</p>
+<p>If you need more control over an InfoWindow than can be offered by the
+<code>InfoWindow</code> component, you can use the <a href="../advanced-marker/"><code>AdvancedMarker</code></a>
+component with html-content to create a custom implementation.</p>
+<p>:::</p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<h3 id="minimal-example">Minimal Example<a class="headerlink" href="#minimal-example" title="Permanent link">&para;</a></h3>
+<p>In this example, the InfoWindow will be initially shown when the map is
+rendered, but the user can close it and there wouldn't be a way to get it back.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">MapWithInfoWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">Map</span><span class="w"> </span><span class="p">{</span><span class="na">...mapProps</span><span class="p">}&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">InfoWindow</span><span class="w"> </span><span class="na">position</span><span class="o">=</span><span class="p">{</span><span class="nx">infoWindowPosition</span><span class="p">}&gt;</span>
+<span class="w">        </span><span class="nx">The</span><span class="w"> </span><span class="nx">content</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">info</span><span class="w"> </span><span class="nb">window</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">here</span><span class="p">.</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">InfoWindow</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">Map</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div>
+<h3 id="infowindow-attached-to-marker">Infowindow Attached to Marker<a class="headerlink" href="#infowindow-attached-to-marker" title="Permanent link">&para;</a></h3>
+<p>A more typical use-case is to have an InfoWindow shown on click for a marker.
+One way to implement this is to write a custom component
+<code>MarkerWithInfoWindow</code> that can then be added to any <code>Map</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">MarkerWithInfoWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="nx">position</span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// `markerRef` and `marker` are needed to establish the connection between</span>
+<span class="w">  </span><span class="c1">// the marker and infowindow (if you&#39;re using the Marker component, you</span>
+<span class="w">  </span><span class="c1">// can use the `useMarkerRef` hook instead).</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">markerRef</span><span class="p">,</span><span class="w"> </span><span class="nx">marker</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useAdvancedMarkerRef</span><span class="p">();</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">infoWindowShown</span><span class="p">,</span><span class="w"> </span><span class="nx">setInfoWindowShown</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// clicking the marker will toggle the infowindow</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">handleMarkerClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useCallback</span><span class="p">(</span>
+<span class="w">    </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setInfoWindowShown</span><span class="p">(</span><span class="nx">isShown</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">!</span><span class="nx">isShown</span><span class="p">),</span>
+<span class="w">    </span><span class="p">[]</span>
+<span class="w">  </span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// if the maps api closes the infowindow, we have to synchronize our state</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">handleClose</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useCallback</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setInfoWindowShown</span><span class="p">(</span><span class="kc">false</span><span class="p">),</span><span class="w"> </span><span class="p">[]);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">AdvancedMarker</span>
+<span class="w">        </span><span class="na">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">markerRef</span><span class="p">}</span>
+<span class="w">        </span><span class="na">position</span><span class="o">=</span><span class="p">{</span><span class="nx">position</span><span class="p">}</span>
+<span class="w">        </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleMarkerClick</span><span class="p">}</span>
+<span class="w">      </span><span class="p">/&gt;</span>
+
+<span class="w">      </span><span class="p">{</span><span class="nx">infoWindowShown</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">InfoWindow</span><span class="w"> </span><span class="na">anchor</span><span class="o">=</span><span class="p">{</span><span class="nx">marker</span><span class="p">}</span><span class="w"> </span><span class="na">onClose</span><span class="o">=</span><span class="p">{</span><span class="nx">handleClose</span><span class="p">}&gt;</span>
+<span class="w">          </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">InfoWindow</span><span class="w"> </span><span class="nx">content</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Some</span><span class="w"> </span><span class="nx">arbitrary</span><span class="w"> </span><span class="nx">html</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">rendered</span><span class="w"> </span><span class="nx">into</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">InfoWindow</span><span class="p">.&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">InfoWindow</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">)}</span>
+<span class="w">    </span><span class="p">&lt;/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div>
+<h2 id="props">Props<a class="headerlink" href="#props" title="Permanent link">&para;</a></h2>
+<p>The InfoWindowProps interface roughly extends the <a href="https://developers.google.com/maps/documentation/javascript/reference/info-window#InfoWindowOptions"><code>google.maps.InfoWindowOptions</code>
+interface</a> and includes all the options available for a
+InfoWindow as props. All supported options are listed below.</p>
+<h3 id="required">Required<a class="headerlink" href="#required" title="Permanent link">&para;</a></h3>
+<p>There are no strictly required props for the InfoWindow component, but it is
+required to set either a <code>position</code> or an <code>anchor</code> to show the infowindow.</p>
+<h3 id="general-props">General Props<a class="headerlink" href="#general-props" title="Permanent link">&para;</a></h3>
+<h4 id="position-googlemapslatlngliteral"><code>position</code>: google.maps.LatLngLiteral<a class="headerlink" href="#position-googlemapslatlngliteral" title="Permanent link">&para;</a></h4>
+<p>The LatLng at which to display this InfoWindow.</p>
+<p>:::note</p>
+<p>When an <code>anchor</code> is specified, the <code>position</code> prop will be ignored.</p>
+<p>:::</p>
+<h4 id="anchor-googlemapsmarker-googlemapsmarkeradvancedmarkerelement"><code>anchor</code>: google.maps.Marker | google.maps.marker.AdvancedMarkerElement<a class="headerlink" href="#anchor-googlemapsmarker-googlemapsmarkeradvancedmarkerelement" title="Permanent link">&para;</a></h4>
+<p>A Marker or AdvancedMarker instance to be used as an anchor. If specified, the
+InfoWindow will be positioned at the top-center of the anchor. References to
+the Marker / AdvancedMarkerElement objects needed can be obtained using the 
+<code>ref</code> property of the <code>Marker</code> and <code>AdvancedMarker</code> components (see example 
+above). </p>
+<h4 id="zindex-number"><code>zIndex</code>: number<a class="headerlink" href="#zindex-number" title="Permanent link">&para;</a></h4>
+<p>All InfoWindows are displayed on the map in order of their zIndex, with
+higher values displayed in front of InfoWindows with lower values. By
+default, InfoWindows are displayed according to their latitude, with
+InfoWindows of lower latitudes appearing in front of InfoWindows at higher
+latitudes. InfoWindows are always displayed in front of markers.</p>
+<h4 id="pixeloffset-number-number"><code>pixelOffset</code>: [number, number]<a class="headerlink" href="#pixeloffset-number-number" title="Permanent link">&para;</a></h4>
+<p>The offset, in pixels, from the tip of the info window to the point on the
+map at whose geographical coordinates the info window is anchored.
+If an InfoWindow is opened with an anchor, the <code>pixelOffset</code> will be
+calculated from the anchor's top/center.</p>
+<h4 id="disableautopan-boolean"><code>disableAutoPan</code>: boolean<a class="headerlink" href="#disableautopan-boolean" title="Permanent link">&para;</a></h4>
+<p>Disable panning the map to make the InfoWindow fully visible when it opens.</p>
+<h4 id="shouldfocus-boolean"><code>shouldFocus</code>: boolean<a class="headerlink" href="#shouldfocus-boolean" title="Permanent link">&para;</a></h4>
+<p>Whether focus should be moved inside the InfoWindow when it is opened. When
+this property isn't set, a heuristic is used to decide whether focus should
+be moved.</p>
+<p>It is recommended to explicitly set this property to fit your needs as the
+heuristic is subject to change and may not work well for all use cases.</p>
+<h3 id="content-props">Content Props<a class="headerlink" href="#content-props" title="Permanent link">&para;</a></h3>
+<h4 id="classname-string"><code>className</code>: string<a class="headerlink" href="#classname-string" title="Permanent link">&para;</a></h4>
+<p>A className to be assigned to the topmost element in the infowindow content.</p>
+<h4 id="style-cssproperties"><code>style</code>: <a href="https://react.dev/reference/react-dom/components/common#applying-css-styles">CSSProperties</a><a class="headerlink" href="#style-cssproperties" title="Permanent link">&para;</a></h4>
+<p>A style declaration to be added to the topmost element in the infowindow
+content. This works exactly as the style property for any other
+html element.</p>
+<h4 id="arialabel-string"><code>ariaLabel</code>: string<a class="headerlink" href="#arialabel-string" title="Permanent link">&para;</a></h4>
+<p>AriaLabel to assign to the InfoWindow.</p>
+<h4 id="minwidth-number"><code>minWidth</code>: number<a class="headerlink" href="#minwidth-number" title="Permanent link">&para;</a></h4>
+<p>Minimum width of the InfoWindow, regardless of the content's width. When
+using this property, it is strongly recommended to set the minWidth to a
+value less than the width of the map (in pixels).</p>
+<p>:::note</p>
+<p>The <code>minWidth</code> can't be changed while the InfoWindow is open.</p>
+<p>:::</p>
+<h4 id="maxwidth-number"><code>maxWidth</code>: number<a class="headerlink" href="#maxwidth-number" title="Permanent link">&para;</a></h4>
+<p>Maximum width of the InfoWindow, regardless of content's width.</p>
+<p>:::note</p>
+<p>The <code>minWidth</code> can't be changed while the InfoWindow is open.</p>
+<p>:::</p>
+<h4 id="headercontent-string-reactreactnode"><code>headerContent</code>: string | React.ReactNode<a class="headerlink" href="#headercontent-string-reactreactnode" title="Permanent link">&para;</a></h4>
+<p>The content to display in the InfoWindow header row.
+This can be any JSX element, or a string that could also contain HTML. When
+a JSX Element is specified, the <code>headerContent</code> will be rendered to html via a
+<a href="https://react.dev/reference/react-dom/createPortal">portal</a>, which requires an additional div element to be added
+as a container.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">InfoWindow</span><span class="w"> </span><span class="na">headerContent</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">h3</span><span class="p">&gt;</span><span class="nx">InfoWindow</span><span class="w"> </span><span class="nx">Header</span><span class="w"> </span><span class="nx">Content</span><span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;}&gt;</span>
+<span class="w">  </span><span class="nx">This</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">content</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">InfoWindow</span><span class="p">.</span>
+<span class="p">&lt;/</span><span class="nt">InfoWindow</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>:::note</p>
+<p>This feature is currently only available in the beta channel of the Maps
+JavaScript API. Set the <code>version</code> prop of your <code>APIProvider</code> to <code>beta</code> to
+enable it.</p>
+<p>:::</p>
+<h4 id="headerdisabled-boolean"><code>headerDisabled</code>: boolean<a class="headerlink" href="#headerdisabled-boolean" title="Permanent link">&para;</a></h4>
+<p>Disables the whole header row in the InfoWindow. When set to true, the
+header will be removed so that the header content and the close button will
+be hidden.</p>
+<p>:::note</p>
+<p>This feature is currently only available in the beta channel of the Maps
+JavaScript API. Set the <code>version</code> prop of your <code>APIProvider</code> to <code>beta</code> to
+enable it.</p>
+<p>:::</p>
+<h3 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h3>
+<h4 id="onclose-void"><code>onClose</code>: () =&gt; void<a class="headerlink" href="#onclose-void" title="Permanent link">&para;</a></h4>
+<p>This event is fired whenever the InfoWindow closes. This could be from
+unmouting the InfoWindow component, pressing the escape key to close the
+InfoWindow, or clicking the close button or removing the marker the
+InfoWindow was anchored to.</p>
+<h4 id="oncloseclick-void"><code>onCloseClick</code>: () =&gt; void<a class="headerlink" href="#oncloseclick-void" title="Permanent link">&para;</a></h4>
+<p>This event is fired when the close button was clicked.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

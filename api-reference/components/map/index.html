@@ -1,0 +1,1109 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="เอกสารโครงการ GitMint Maps (ภาษาไทย)">
+      
+      
+        <meta name="author" content="gittisak-go">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title><Map> Component - GitMint Maps — Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#map-component" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="GitMint Maps — Wiki" class="md-header__button md-logo" aria-label="GitMint Maps — Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GitMint Maps — Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              &lt;Map&gt; Component
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="GitMint Maps — Wiki" class="md-nav__button md-logo" aria-label="GitMint Maps — Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    GitMint Maps — Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    หน้าแรก
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    เริ่มต้นใช้งาน
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    การพัฒนา
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            การพัฒนา
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dev-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    การตั้งค่าสภาพแวดล้อม
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    โครงสร้างโค้ด
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    การปฏิบัติการ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    การมีส่วนร่วม
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ประวัติการเปลี่ยนแปลง
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#controlled-and-uncontrolled-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlled and Uncontrolled Props
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-instance-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Map Instance Caching
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#props" class="md-nav__link">
+    <span class="md-ellipsis">
+      Props
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Props">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Props
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Props">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#id-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      id: string
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapid-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      mapId: string
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colorscheme-googlemapscolorscheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      colorScheme: google.maps.ColorScheme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renderingtype-googlemapsrenderingtype" class="md-nav__link">
+    <span class="md-ellipsis">
+      renderingType: google.maps.RenderingType
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#style-reactcssproperties" class="md-nav__link">
+    <span class="md-ellipsis">
+      style: React.CSSProperties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classname-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      className: string
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reusemaps-boolean" class="md-nav__link">
+    <span class="md-ellipsis">
+      reuseMaps: boolean
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camera-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camera Control
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Camera Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#center-googlemapslatlngliteral" class="md-nav__link">
+    <span class="md-ellipsis">
+      center: google.maps.LatLngLiteral
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zoom-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      zoom: number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heading-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      heading: number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tilt-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      tilt: number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defaultcenter-defaultzoom-defaultheading-defaulttilt" class="md-nav__link">
+    <span class="md-ellipsis">
+      defaultCenter, defaultZoom, defaultHeading, defaultTilt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defaultbounds-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      defaultBounds: object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controlled-boolean" class="md-nav__link">
+    <span class="md-ellipsis">
+      controlled: boolean
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Events
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mapping-of-maps-javascript-api-event-names-to-react-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping of Maps JavaScript API Event names to React props
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hooks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Source
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="map-component"><code>&lt;Map&gt;</code> Component<a class="headerlink" href="#map-component" title="Permanent link">&para;</a></h1>
+<p>React component to render a <a href="https://developers.google.com/maps/documentation/javascript/reference/map#Map">Google map</a>. It can be placed as a child
+into any other component, but it has to be somewhere inside an
+<a href="../api-provider/"><code>&lt;APIProvider&gt;</code></a> container.</p>
+<p>The main props to control are the camera parameters – <code>center</code>,
+<code>zoom</code>, <code>heading</code> and <code>tilt</code>. At least the center and zoom props have to be
+specified for the map to be shown.</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">APIProvider</span><span class="p">,</span><span class="w"> </span><span class="nb">Map</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@vis.gl/react-google-maps&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="p">&lt;</span><span class="nt">APIProvider</span><span class="w"> </span><span class="na">apiKey</span><span class="o">=</span><span class="p">{</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">GOOGLE_MAPS_API_KEY</span><span class="p">}&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">Map</span><span class="w"> </span><span class="na">zoom</span><span class="o">=</span><span class="p">{</span><span class="mf">10</span><span class="p">}</span><span class="w"> </span><span class="na">center</span><span class="o">=</span><span class="p">{{</span><span class="nx">lat</span><span class="o">:</span><span class="w"> </span><span class="kt">53.54992</span><span class="p">,</span><span class="w"> </span><span class="nx">lng</span><span class="o">:</span><span class="w"> </span><span class="kt">10.00678</span><span class="p">}}</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">  </span><span class="p">&lt;/</span><span class="nt">APIProvider</span><span class="p">&gt;</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>:::note</p>
+<p>By default, the intrinsic height of a Google map is 0.
+To prevent this from causing confusion, the Map component uses a
+default-style of <code>width: 100%; height: 100%;</code> for the div-element containing
+the map, assuming that the parent element will establish a size for the map.
+If that doesn't work in your case, you can adjust the styling of the map
+container using the <a href="#style-reactcssproperties"><code>style</code></a> and
+<a href="#classname-string"><code>className</code></a> props.</p>
+<p>:::</p>
+<h2 id="controlled-and-uncontrolled-props">Controlled and Uncontrolled Props<a class="headerlink" href="#controlled-and-uncontrolled-props" title="Permanent link">&para;</a></h2>
+<p>The props controlling the camera parameters for the map (center, zoom,
+heading and tilt) can all be specified via controlled or uncontrolled values.
+For example, the center of the map can be specified via either <code>center</code> or
+<code>defaultCenter</code>. This can even be mixed for the different parameters (for
+example, only the zoom value is controlled, while others are free).</p>
+<p>As is the case with React form elements, the default-values will only be
+applied when the map is first initialized, while the regular parameters will
+make sure the map stays synchronized with the value specified.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">UncontrolledMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Map</span><span class="w"> </span><span class="na">defaultCenter</span><span class="o">=</span><span class="p">{{</span><span class="nx">lat</span><span class="o">:</span><span class="w"> </span><span class="kt">40.7</span><span class="p">,</span><span class="w"> </span><span class="nx">lng</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">74</span><span class="p">}}</span><span class="w"> </span><span class="na">defaultZoom</span><span class="o">=</span><span class="p">{</span><span class="mf">12</span><span class="p">}&gt;&lt;/</span><span class="nt">Map</span><span class="p">&gt;;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>When only controlled props are used, the map will always exactly reflect the
+values specified for the camera parameters. When interactions occur, the new
+camera parameters will be published with a <code>cameraChanged</code> event and the
+application can use them to update the values passed to the props of the map.</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">MapCameraChangedEvent</span><span class="p">,</span><span class="w"> </span><span class="nx">MapCameraProps</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@vis.gl/react-google-maps&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">INITIAL_CAMERA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">center</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">lat</span><span class="o">:</span><span class="w"> </span><span class="kt">40.7</span><span class="p">,</span><span class="w"> </span><span class="nx">lng</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">74</span><span class="p">},</span>
+<span class="w">  </span><span class="nx">zoom</span><span class="o">:</span><span class="w"> </span><span class="kt">12</span>
+<span class="p">};</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">ControlledMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">cameraProps</span><span class="p">,</span><span class="w"> </span><span class="nx">setCameraProps</span><span class="p">]</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="nx">useState</span><span class="p">&lt;</span><span class="nt">MapCameraProps</span><span class="p">&gt;(</span><span class="nx">INITIAL_CAMERA</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">handleCameraChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useCallback</span><span class="p">((</span><span class="nx">ev</span><span class="o">:</span><span class="w"> </span><span class="kt">MapCameraChangedEvent</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span>
+<span class="w">    </span><span class="nx">setCameraProps</span><span class="p">(</span><span class="nx">ev</span><span class="p">.</span><span class="nx">detail</span><span class="p">)</span>
+<span class="w">  </span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Map</span><span class="w"> </span><span class="p">{</span><span class="na">...cameraProps</span><span class="p">}</span><span class="w"> </span><span class="na">onCameraChanged</span><span class="o">=</span><span class="p">{</span><span class="nx">handleCameraChange</span><span class="p">}&gt;&lt;/</span><span class="nt">Map</span><span class="p">&gt;;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>In addition to this, there is also the <strong>externally controlled mode</strong>,
+enabled by the <a href="#controlled-boolean"><code>controlled</code> prop</a>. When this mode is
+active, the map will disable all control inputs and will reject to render
+anything not specified in the camera props.</p>
+<h2 id="map-instance-caching">Map Instance Caching<a class="headerlink" href="#map-instance-caching" title="Permanent link">&para;</a></h2>
+<p>If your application renders the map on a subpage or otherwise mounts and
+unmounts the <code>Map</code> component a lot, this can cause new map instances to be
+created with every mount of the component. Since the pricing of the Google
+Maps JavaScript API is based on map-views (effectively calls to the
+<code>google.maps.Map</code> constructor), this can quickly cause a problem.</p>
+<p>The <code>Map</code> component can be configured to re-use already created maps with
+the <a href="#reusemaps-boolean"><code>reuseMaps</code></a> prop.
+When enabled, all <code>Map</code> components created with the same <a href="#mapid-string"><code>mapId</code></a>,
+<a href="#colorscheme-googlemapscolorscheme"><code>colorScheme</code></a> and
+<a href="#renderingtype-googlemapsrenderingtype"><code>renderingType</code></a> will reuse
+previously created instances instead of creating new ones.</p>
+<p>:::warning</p>
+<p>In the current version, support for map-caching is still a bit experimental, and
+there are some known issues when maps are being reused with different sets
+of options applied. In most simpler situations, like when showing the very
+same component multiple times, it should work fine.</p>
+<p>If you experience any problems using this feature, please file a
+<a href="https://github.com/visgl/react-google-maps/issues/new/choose">bug-report</a> or <a href="https://github.com/visgl/react-google-maps/discussions">start a discussion</a> on GitHub.</p>
+<p>:::</p>
+<h2 id="props">Props<a class="headerlink" href="#props" title="Permanent link">&para;</a></h2>
+<p>The <code>MapProps</code> type extends the <a href="https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions"><code>google.maps.MapOptions</code> interface</a>
+and includes all possible options available for a Google map as props.</p>
+<p>The most important of these options are also listed below along with the
+properties added for the react-library.</p>
+<p>:::note</p>
+<p>When specifying the props, the classes provided by the Google
+Maps API (like <code>google.maps.LatLng</code> or <code>google.maps.LatLngBounds</code>) cannot
+be used, since the API will only be available after the initial
+creation of the React components takes place. Instead, the
+corresponding literal types (<code>google.maps.LatLngLiteral</code> or
+<code>google.maps.LatLngBoundsLiteral</code>) have to be used.</p>
+<p>:::</p>
+<h3 id="required">Required<a class="headerlink" href="#required" title="Permanent link">&para;</a></h3>
+<p>The map doesn't have any strictly required props, but center and zoom-level have
+to be provided in some way for the map to render. This can be done</p>
+<ul>
+<li>by specifying both the <code>center</code> and <code>zoom</code> props,</li>
+<li>by specifying both the <code>defaultCenter</code> and <code>defaultZoom</code> props,</li>
+<li>or by specifying the map-region to be shown with the <code>defaultBounds</code> prop.</li>
+</ul>
+<h3 id="general-props">General Props<a class="headerlink" href="#general-props" title="Permanent link">&para;</a></h3>
+<p>:::info</p>
+<p>The Maps JavaScript API doesn't allow changing the Map ID, the color scheme
+or the rendering-type of a map after it has been created. This isn't the
+case for this component. However, the internal <code>google.maps.Map</code> instance
+has to be recreated when the <code>mapId</code>, <code>colorScheme</code> or <code>renderingType</code> props
+are changed, <strong>which will cause additional cost</strong>.</p>
+<p>See the <a href="#reusemaps-boolean"><code>reuseMaps</code></a> prop if your application has to
+dynamically switch between multiple Map IDs, color schemes or rendering types.</p>
+<p>:::</p>
+<h4 id="id-string"><code>id</code>: string<a class="headerlink" href="#id-string" title="Permanent link">&para;</a></h4>
+<p>A string that identifies the map component. This is required when multiple
+maps are present in the same APIProvider context to be able to access them using the
+<a href="../../hooks/use-map/"><code>useMap</code></a> hook.</p>
+<h4 id="mapid-string"><code>mapId</code>: string<a class="headerlink" href="#mapid-string" title="Permanent link">&para;</a></h4>
+<p>The <a href="https://developers.google.com/maps/documentation/get-map-id">Map ID</a> of the map. This is required if you want to make use
+of the <a href="https://developers.google.com/maps/documentation/javascript/cloud-customization">Cloud-based maps styling</a>.</p>
+<h4 id="colorscheme-googlemapscolorscheme"><code>colorScheme</code>: <a href="https://developers.google.com/maps/documentation/javascript/reference/map#ColorScheme">google.maps.ColorScheme</a><a class="headerlink" href="#colorscheme-googlemapscolorscheme" title="Permanent link">&para;</a></h4>
+<p>The <a href="https://developers.google.com/maps/documentation/javascript/mapcolorscheme">color-scheme</a> to be used by the map. Can be
+<code>'LIGHT'</code>, <code>'DARK'</code>, <code>'FOLLOW_SYSTEM'</code> or one of the
+<code>ColorScheme</code> constants
+(<code>import {ColorScheme} from '@vis.gl/react-google-maps';</code>).</p>
+<p>:::note</p>
+<p>Custom styles that use Map IDs only apply to the light color scheme for roadmap map types.</p>
+<p>:::</p>
+<h4 id="renderingtype-googlemapsrenderingtype"><code>renderingType</code>: <a href="https://developers.google.com/maps/documentation/javascript/reference/map#RenderingType">google.maps.RenderingType</a><a class="headerlink" href="#renderingtype-googlemapsrenderingtype" title="Permanent link">&para;</a></h4>
+<p>The desired rendering type the renderer should use. Can be <code>'RASTER'</code> or
+<code>'VECTOR'</code> or one of the <code>RenderingType</code> constants
+(<code>import {RenderingType} from '@vis.gl/react-google-maps';</code>).</p>
+<p>If not set, the cloud configuration for the map ID will determine the
+rendering type (if available). Please note that vector maps may not be
+available for all devices and browsers, and the map will fall back to a
+raster map as needed.</p>
+<h4 id="style-reactcssproperties"><code>style</code>: React.CSSProperties<a class="headerlink" href="#style-reactcssproperties" title="Permanent link">&para;</a></h4>
+<p>Additional style rules to apply to the map dom-element. By default, this will
+only contain <code>{width: '100%', height: '100%'}</code>.</p>
+<h4 id="classname-string"><code>className</code>: string<a class="headerlink" href="#classname-string" title="Permanent link">&para;</a></h4>
+<p>Additional css class-name to apply to the element containing the map.
+When a classname is specified, the default width and height of the map from the
+style-prop is no longer applied.</p>
+<h4 id="reusemaps-boolean"><code>reuseMaps</code>: boolean<a class="headerlink" href="#reusemaps-boolean" title="Permanent link">&para;</a></h4>
+<p>Enable map-instance caching for this component. When caching is enabled,
+this component will reuse map instances created with the same <code>mapId</code>,
+<code>colorScheme</code> and <code>renderingType</code>.</p>
+<p>See also the section <a href="#map-instance-caching">Map Instance Caching</a> above.</p>
+<h3 id="camera-control">Camera Control<a class="headerlink" href="#camera-control" title="Permanent link">&para;</a></h3>
+<h4 id="center-googlemapslatlngliteral"><code>center</code>: <a href="https://developers.google.com/maps/documentation/javascript/reference/coordinates#LatLngLiteral">google.maps.LatLngLiteral</a><a class="headerlink" href="#center-googlemapslatlngliteral" title="Permanent link">&para;</a></h4>
+<p>Coordinates for the center of the map.</p>
+<h4 id="zoom-number"><code>zoom</code>: number<a class="headerlink" href="#zoom-number" title="Permanent link">&para;</a></h4>
+<p>The initial resolution at which to display the map.
+The values range from 0 to 22, the level of detail for different zoom-levels
+is approximately:</p>
+<ul>
+<li><code>1</code>: Entire World</li>
+<li><code>5</code>: Landmass/continent</li>
+<li><code>10</code>: City</li>
+<li><code>15</code>: Streets</li>
+<li><code>20</code>: Buildings</li>
+</ul>
+<p>The Maps JavaScript API Documentation <a href="https://developers.google.com/maps/documentation/javascript/coordinates">has some more information on this topic</a>.</p>
+<h4 id="heading-number"><code>heading</code>: number<a class="headerlink" href="#heading-number" title="Permanent link">&para;</a></h4>
+<p>The heading of the map in degrees, measured clockwise from cardinal direction
+North.</p>
+<h4 id="tilt-number"><code>tilt</code>: number<a class="headerlink" href="#tilt-number" title="Permanent link">&para;</a></h4>
+<p>For vector maps, sets the angle of incidence for the map, in degrees from the
+viewport plane to the map plane. A value of 0</p>
+<p>The allowed values are restricted depending on the zoom level of the map:</p>
+<ul>
+<li>for zoom-levels below 10, the maximum value is 30,</li>
+<li>for zoom above 15.5, the maximum value is 67.5</li>
+<li>between 10 and 15.5, it is a piecewise linear interpolation
+  (<a href="https://github.com/visgl/react-google-maps/blob/4319bd3b68c40b9aa9b0ce7f377b52d20e824849/src/libraries/limit-tilt-range.ts#L4-L19">see here</a> for details)</li>
+</ul>
+<h4 id="defaultcenter-defaultzoom-defaultheading-defaulttilt"><code>defaultCenter</code>, <code>defaultZoom</code>, <code>defaultHeading</code>, <code>defaultTilt</code><a class="headerlink" href="#defaultcenter-defaultzoom-defaultheading-defaulttilt" title="Permanent link">&para;</a></h4>
+<p>The initial state of the camera. This can be used to leave the map
+component in uncontrolled mode. When both a default-value and a controlled
+value are present for a parameter, the controlled value takes precedence.</p>
+<h4 id="defaultbounds-object"><code>defaultBounds</code>: object<a class="headerlink" href="#defaultbounds-object" title="Permanent link">&para;</a></h4>
+<p>An alternative way to specify the region that should initially be visible on
+the map. Has otherwise the same effect as <code>defaultCenter</code> and <code>defaultZoom</code>.</p>
+<p>The <code>defaultBounds</code> type is an extension of <a href="https://developers.google.com/maps/documentation/javascript/reference/coordinates#LatLngBoundsLiteral">google.maps.LatLngBoundsLiteral</a>
+that can also contain the optional property <code>padding</code>: number | <a href="https://developers.google.com/maps/documentation/javascript/reference/coordinates#Padding">google.maps.Padding</a>
+that represents padding in pixels for the initial view.
+The bounds will be fit in the part of the map that remains after padding is removed.
+A number value will yield the same padding on all 4 sides.</p>
+<h4 id="controlled-boolean"><code>controlled</code>: boolean<a class="headerlink" href="#controlled-boolean" title="Permanent link">&para;</a></h4>
+<p>This Indicates that the map will be controlled externally. Disables all controls
+provided by the map itself.</p>
+<h3 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h3>
+<p>The map component supports <a href="https://developers.google.com/maps/documentation/javascript/reference/map#Map-Events">all events emitted by the <code>google.maps.Map</code>
+instance</a> in a React-typical way. Here is an example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">MapWithEventHandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">props</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">handleCameraChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useCallback</span><span class="p">((</span><span class="nx">ev</span><span class="o">:</span><span class="w"> </span><span class="kt">MapCameraChangedEvent</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;camera changed: &#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">ev</span><span class="p">.</span><span class="nx">detail</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Map</span><span class="w"> </span><span class="p">{</span><span class="na">...props</span><span class="p">}</span><span class="w"> </span><span class="na">onCameraChanged</span><span class="o">=</span><span class="p">{</span><span class="nx">handleCameraChange</span><span class="p">}&gt;&lt;/</span><span class="nt">Map</span><span class="p">&gt;;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>See <a href="#mapping-of-maps-javascript-api-event-names-to-react-props">the table below</a>
+for the full list of events and corresponding prop names.</p>
+<p>All event callbacks receive a single argument of type <code>MapEvent</code> with the
+following properties and methods:</p>
+<ul>
+<li><strong><code>event.type</code>: string</strong> The event type of the event from the Maps JavaScript API.</li>
+<li><strong><code>event.map</code>: google.maps.Map</strong> The map instance that dispatched the event.</li>
+<li><strong><code>event.stoppable</code>: boolean</strong> Indicates if the event can be stopped in
+  the event-handler. This is only the case for the <code>MapMouseEvent</code> type.</li>
+<li><strong><code>event.stop()</code>: () =&gt; void</strong> for stoppable events, this will cause the
+  event to stop being processed. Other event-types also have this method,
+  but it doesn't do anything.</li>
+<li><strong><code>event.domEvent</code>: MouseEvent | TouchEvent | PointerEvent | KeyboardEvent
+  | Event</strong> For a <code>MapMouseEvent</code> this contains the original DOM event being
+  handled. For other events, this is undefined.</li>
+</ul>
+<p>Based on the specific event, there is also additional information in the
+<strong><code>event.detail</code></strong> property:</p>
+<ul>
+<li><strong><code>MapCameraChangedEvent</code></strong></li>
+<li><strong><code>center</code></strong>, <strong><code>zoom</code></strong>, <strong><code>heading</code></strong>, <strong><code>tilt</code></strong> the current
+    camera-parameters of the map</li>
+<li><strong><code>bounds</code>: google.maps.LatLngBoundsLiteral</strong> the currently
+    visible bounding box</li>
+<li><strong><code>MapMouseEvent</code></strong> details contain</li>
+<li><strong><code>latLng</code>: google.maps.LatLngLiteral | null</strong> the map coordinates of the
+    mouse</li>
+<li><strong><code>placeId</code>: string | null</strong> when a place marker on the map is clicked,
+    this will contain the placeId of the Google Places API for that place.</li>
+</ul>
+<h4 id="mapping-of-maps-javascript-api-event-names-to-react-props">Mapping of Maps JavaScript API Event names to React props<a class="headerlink" href="#mapping-of-maps-javascript-api-event-names-to-react-props" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Google Maps Event</th>
+<th>React Prop</th>
+<th>Event Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bounds_changed</code></td>
+<td><code>onBoundsChanged</code> and <code>onCameraChanged</code></td>
+<td><code>MapCameraChangedEvent</code></td>
+</tr>
+<tr>
+<td><code>center_changed</code></td>
+<td><code>onCenterChanged</code></td>
+<td><code>MapCameraChangedEvent</code></td>
+</tr>
+<tr>
+<td><code>zoom_changed</code></td>
+<td><code>onZoomChanged</code></td>
+<td><code>MapCameraChangedEvent</code></td>
+</tr>
+<tr>
+<td><code>heading_changed</code></td>
+<td><code>onHeadingChanged</code></td>
+<td><code>MapCameraChangedEvent</code></td>
+</tr>
+<tr>
+<td><code>tilt_changed</code></td>
+<td><code>onTiltChanged</code></td>
+<td><code>MapCameraChangedEvent</code></td>
+</tr>
+<tr>
+<td><code>click</code></td>
+<td><code>onClick</code></td>
+<td><code>MapMouseEvent</code></td>
+</tr>
+<tr>
+<td><code>contextmenu</code></td>
+<td><code>onContextmenu</code></td>
+<td><code>MapMouseEvent</code></td>
+</tr>
+<tr>
+<td><code>dblclick</code></td>
+<td><code>onDblclick</code></td>
+<td><code>MapMouseEvent</code></td>
+</tr>
+<tr>
+<td><code>mousemove</code></td>
+<td><code>onMousemove</code></td>
+<td><code>MapMouseEvent</code></td>
+</tr>
+<tr>
+<td><code>mouseover</code></td>
+<td><code>onMouseover</code></td>
+<td><code>MapMouseEvent</code></td>
+</tr>
+<tr>
+<td><code>mouseout</code></td>
+<td><code>onMouseout</code></td>
+<td><code>MapMouseEvent</code></td>
+</tr>
+<tr>
+<td><code>drag</code></td>
+<td><code>onDrag</code></td>
+<td><code>MapEvent</code></td>
+</tr>
+<tr>
+<td><code>dragend</code></td>
+<td><code>onDragend</code></td>
+<td><code>MapEvent</code></td>
+</tr>
+<tr>
+<td><code>dragstart</code></td>
+<td><code>onDragstart</code></td>
+<td><code>MapEvent</code></td>
+</tr>
+<tr>
+<td><code>idle</code></td>
+<td><code>onIdle</code></td>
+<td><code>MapEvent</code></td>
+</tr>
+<tr>
+<td><code>projection_changed</code></td>
+<td><code>onProjectionChanged</code></td>
+<td><code>MapEvent</code></td>
+</tr>
+<tr>
+<td><code>isfractionalzoomenabled_changed</code></td>
+<td><code>onIsFractionalZoomEnabledChanged</code></td>
+<td><code>MapEvent</code></td>
+</tr>
+<tr>
+<td><code>mapcapabilities_changed</code></td>
+<td><code>onMapCapabilitiesChanged</code></td>
+<td><code>MapEvent</code></td>
+</tr>
+<tr>
+<td><code>maptypeid_changed</code></td>
+<td><code>onMapTypeIdChanged</code></td>
+<td><code>MapEvent</code></td>
+</tr>
+<tr>
+<td><code>renderingtype_changed</code></td>
+<td><code>onRenderingTypeChanged</code></td>
+<td><code>MapEvent</code></td>
+</tr>
+<tr>
+<td><code>tilesloaded</code></td>
+<td><code>onTilesLoaded</code></td>
+<td><code>MapEvent</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="context">Context<a class="headerlink" href="#context" title="Permanent link">&para;</a></h2>
+<p>The Map creates a context value <code>GoogleMapsContext</code> to be used by the hooks and
+components in this library, containing a reference to the <code>google.maps.Map</code>
+instance.</p>
+<p>:::note</p>
+<p>Client code should never need to interact with the context directly, always
+use the corresponding hooks instead.
+If you feel like you need to directly access the context, please file a
+bug report about this.</p>
+<p>:::</p>
+<h2 id="hooks">Hooks<a class="headerlink" href="#hooks" title="Permanent link">&para;</a></h2>
+<p>You can use the <a href="../../hooks/use-map/"><code>useMap()</code></a> hook in other components
+to get access to the <code>google.maps.Map</code> object rendered in the <code>&lt;Map&gt;</code> component.</p>
+<h2 id="source">Source<a class="headerlink" href="#source" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/visgl/react-google-maps/tree/main/src/components/map"><code>./src/components/map</code></a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
