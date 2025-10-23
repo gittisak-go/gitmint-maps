@@ -1,44 +1,39 @@
-# React Components for the Google Maps JavaScript API
+
+# React: Google Maps JavaScript API
+**gitmint Modfied**
+
 
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/visgl/react-google-maps/tree/main/LICENSE)
 
-This is a TypeScript / JavaScript library to integrate the Maps JavaScript API
-into your React application.
-It comes with a collection of React components to create maps, markers and
-infowindows, and a set of hooks to use some of the Maps JavaScript API
-[Services][gmp-services] and [Libraries][gmp-libraries].
+นี่คือไลบรารี TypeScript / JavaScript สำหรับใช้งาน Google Maps JavaScript API ร่วมกับแอป React ของคุณ
+โดยมีคอลเล็กชันของคอมโพเนนต์ React สำหรับสร้างแผนที่ (maps), จุดปักหมุด (markers) และหน้าต่างข้อมูล (infowindows)
+รวมถึงชุด hooks เพื่อใช้ Services และ Libraries ของ Maps JavaScript API [Services][gmp-services] และ [Libraries][gmp-libraries]
 
-## Installation
+## การติดตั้ง
 
-This library is available on npm as [`@vis.gl/react-google-maps`][npm-package].
+ไลบรารีนี้มีให้ติดตั้งผ่าน npm ในชื่อแพ็กเกจ [`@vis.gl/react-google-maps`][npm-package]
 
 ```sh
 npm install @vis.gl/react-google-maps
 ```
 
-or
+หรือ
 
 ```sh
 yarn add @vis.gl/react-google-maps
 ```
 
-_(PowerShell users: since `@` has a special meaning in PowerShell, the
-package name has to be quoted)_
+_(หมายเหตุสำหรับผู้ใช้ PowerShell: เนื่องจากตัวอักษร `@` มีความหมายพิเศษใน PowerShell ให้ใส่ชื่อแพ็กเกจไว้ในเครื่องหมายคำพูด)_
 
-## Usage
+## วิธีใช้งาน (สรุป)
 
-Import the [`APIProvider`][api-provider] and wrap it around all components that should have
-access to the Maps JavaScript API.
-Any component within the context of the `APIProvider` can use the hooks and
-components provided by this library.
+นำเข้า [`APIProvider`][api-provider] แล้วห่อนรอบคอมโพเนนต์ทั้งหมดที่ต้องการให้เข้าถึง Maps JavaScript API
+คอมโพเนนต์ใด ๆ ที่อยู่ภายในบริบทของ `APIProvider` จะสามารถใช้ hooks และคอมโพเนนต์จากไลบรารีนี้ได้
 
-To render a simple map, add a [`Map`][api-map] component inside the `APIProvider`.
-Within the `Map` component, you can then add further components like
-[`Marker`][api-marker], [`AdvancedMarker`][api-adv-marker], or
-[`InfoWindow`][api-infowindow] to render content on the map.
+ตัวอย่างการแสดงแผนที่อย่างง่าย: ใส่คอมโพเนนต์ [`Map`][api-map] ภายใน `APIProvider` แล้วเพิ่มคอมโพเนนต์อื่น ๆ เช่น
+[`Marker`][api-marker], [`AdvancedMarker`][api-adv-marker] หรือ [`InfoWindow`][api-infowindow] เพื่อแสดงเนื้อหาบนแผนที่
 
-For more advanced use-cases you can even add your own components to the map
-that make use of `google.maps.OverlayView` or `google.maps.WebGlOverlayView`.
+ถ้าต้องการทำงานซับซ้อนขึ้น สามารถเพิ่มคอมโพเนนต์ที่ใช้งาน `google.maps.OverlayView` หรือ `google.maps.WebGlOverlayView` ได้เช่นกัน
 
 ```tsx
 import {AdvancedMarker, APIProvider, Map} from '@vis.gl/react-google-maps';
@@ -58,29 +53,25 @@ function App() {
 export default App;
 ```
 
-Please see our [documentation][docs] or [examples][] for more in-depth information
-about this library.
+ดูเอกสารเพิ่มเติมใน [documentation][docs] หรือดูตัวอย่างการใช้งานใน [examples][] สำหรับคำอธิบายเชิงลึก
 
-### Using other libraries of the Maps JavaScript API
+### การใช้งาน Libraries อื่น ๆ ของ Maps JavaScript API
 
-Besides rendering maps, the Maps JavaScript API has a lot of
-[additional libraries][gmp-libraries] for things like geocoding, routing, the
-Places API, Street View, and a lot more.
+นอกจากการแสดงผลแผนที่แล้ว Maps JavaScript API ยังมีไลบรารีเพิ่มเติมสำหรับงานอย่างการแปลงที่อยู่เป็นพิกัด (geocoding),
+การวางแผนเส้นทาง (routing), Places API, Street View และอื่น ๆ อีกมากมาย
 
-These libraries are not loaded by default, which is why this module provides
-the [`useMapsLibrary()`][api-use-lib] hook to handle dynamic loading of
-additional libraries.
+ไลบรารีเหล่านี้จะไม่ถูกโหลดโดยค่าเริ่มต้น ดังนั้นโมดูลนี้จึงมี hook [`useMapsLibrary()`][api-use-lib]
+เพื่อช่วยโหลดไลบรารีเพิ่มเติมแบบไดนามิก
 
-For example, if you just want to use the `google.maps.geocoding.Geocoder` class in
-a component and you don't even need a map, it can be implemented like this:
+ตัวอย่าง: หากคุณต้องการใช้คลาส `google.maps.geocoding.Geocoder` ในคอมโพเนนต์ แต่ไม่ต้องการแสดงแผนที่เลย
+สามารถทำได้ดังนี้:
 
 ```tsx
 import {useMap, useMapsLibrary} from '@vis.gl/react-google-maps';
 
 const MyComponent = () => {
-  // useMapsLibrary loads the geocoding library, it might initially return `null`
-  // if the library hasn't been loaded. Once loaded, it will return the library
-  // object as it would be returned by `await google.maps.importLibrary()`
+  // useMapsLibrary จะโหลดไลบรารี geocoding ให้ ซึ่งในตอนแรกอาจคืนค่า `null`
+  // หากยังไม่ได้โหลด เมื่อโหลดเสร็จจะคืนค่าอ็อบเจ็กต์ไลบรารี เหมือนกับที่ได้จาก `await google.maps.importLibrary()`
   const geocodingLib = useMapsLibrary('geocoding');
   const geocoder = useMemo(
     () => geocodingLib && new geocodingLib.Geocoder(),
@@ -90,7 +81,7 @@ const MyComponent = () => {
   useEffect(() => {
     if (!geocoder) return;
 
-    // now you can use `geocoder.geocode(...)` here
+    // ตอนนี้คุณสามารถเรียกใช้ `geocoder.geocode(...)` ได้ที่นี่
   }, [geocoder]);
 
   return <></>;
@@ -105,62 +96,42 @@ const App = () => {
 };
 ```
 
-## Examples
+## ตัวอย่าง
 
-Explore our [examples directory on GitHub](./examples) or the
-[examples on our website][examples] for full implementation examples.
+สำรวจโฟลเดอร์ [examples directory on GitHub](./examples) หรือตัวอย่างบนเว็บไซต์ของเราที่ [examples][examples] เพื่อดูตัวอย่างการใช้งานแบบครบถ้วน
 
-## Supported Browsers
+## เบราว์เซอร์ที่รองรับ
 
-Being a library built around the Google Maps JavaScript API, we follow the
-same browser-support policy as the Google Maps Team,
-[available here][gmp-browsersupport].
-Generally, the last two versions of the major browsers are officially supported.
+เนื่องจากไลบรารีนี้สร้างขึ้นบนพื้นฐานของ Google Maps JavaScript API เราจึงปฏิบัติตามนโยบายการรองรับเบราว์เซอร์ของทีม Google Maps
+ดูข้อมูลได้ที่หน้า [browser support][gmp-browsersupport]
+โดยทั่วไปจะรองรับอย่างเป็นทางการสำหรับ 2 เวอร์ชันล่าสุดของเบราว์เซอร์หลัก ๆ
 
-It is not unlikely that browsers even far outside the given
-range will still work. We try our best to support as many browsers and
-versions as reasonably possible, but we won't actively investigate issues
-related to outdated browser versions.
+แม้ว่าเบราว์เซอร์รุ่นอื่นนอกเหนือจากช่วงนี้อาจทำงานได้ แต่เราอาจจะไม่ตรวจสอบหรือแก้ไขปัญหาในเบราว์เซอร์ที่ล้าสมัยมากนัก
+หากคุณมีข้อเสนอแนะเล็ก ๆ น้อย ๆ ที่ช่วยขยายช่วงการรองรับโดยไม่กระทบกับเบราว์เซอร์ที่รองรับอยู่ เรายินดีรับพิจารณา
 
-However, if you can suggest small changes that could be made to even
-increase that range, we will be happy to include them, as long as they don't
-negatively affect the supported browsers.
+## ข้อตกลงการให้บริการ (Terms of Service)
 
-## Terms of Service
+`@vis.gl/react-google-maps` ใช้บริการของ Google Maps Platform การใช้บริการดังกล่าวผ่านไลบรารีนี้
+ผูกพันตาม [Google Maps Platform Terms of Service][gmp-tos]
 
-`@vis.gl/react-google-maps` uses Google Maps Platform services. Use of Google
-Maps Platform services through this library is subject to the
-[Google Maps Platform Terms of Service][gmp-tos].
+ไลบรารีนี้ไม่ใช่บริการหลักของ Google Maps Platform ดังนั้นเงื่อนไขบางอย่างของ Google Maps Platform (เช่น Technical Support Services, SLA และ Deprecation Policy)
+อาจไม่ถูกนำมาบังคับกับไลบรารีนี้โดยตรง
 
-This library is not a Google Maps Platform Core Service.
-Therefore, the Google Maps Platform Terms of Service (e.g., Technical
-Support Services, Service Level Agreements, and Deprecation Policy)
-do not apply to this library.
+### สำหรับผู้พัฒนาที่อยู่ในเขตเศรษฐกิจยุโรป (EEA)
 
-### European Economic Area (EEA) developers
+หากที่อยู่สำหรับการเรียกเก็บเงินของคุณอยู่ในเขต EEA ตั้งแต่วันที่ 8 กรกฎาคม 2025 ข้อกำหนด [Google Maps Platform EEA Terms of Service][gmp-tos-eea]
+จะมีผลกับการใช้บริการของคุณ การทำงานบางอย่างอาจแตกต่างกันไปตามภูมิภาค
+[อ่านเพิ่มเติม][gmp-tos-eea-faq]
 
-If your billing address is in the European Economic Area, effective on 
-8 July 2025, the [Google Maps Platform EEA Terms of Service][gmp-tos-eea] 
-will apply to your use of the Services. Functionality varies by region.
-[Learn more][gmp-tos-eea-faq].
+## การช่วยเหลือและการสนับสนุน
 
-## Help and Support
+ไลบรารีนี้เป็นโอเพนซอร์ส หากพบบั๊กหรือต้องการฟีเจอร์ใหม่ กรุณา [เปิด issue][rgm-issues] บน GitHub
+หากต้องการถามคำถามเชิงเทคนิคจากชุมชนนักพัฒนา Google Maps Platform คุณสามารถเปิดกระทู้ใน [GitHub Discussions][rgm-discuss]
+หรือติดต่อผ่านช่องทางชุมชนนักพัฒนาต่าง ๆ [developer community channels][gmp-community]
 
-This library is offered via an open source license. It is not governed by the
-Google Maps Platform [Technical Support Services Guidelines][gmp-tssg],
-the [SLA][gmp-sla], or the [Deprecation Policy][gmp-dp] (however, any Google
-Maps Platform services used by this library remain subject to the Google Maps
-Platform Terms of Service).
+หากต้องการร่วมพัฒนา โปรดดู [Contributing guide][rgm-contrib]
 
-If you find a bug or have a feature request, please [file an issue][rgm-issues]
-on GitHub. If you would like to get answers to technical questions from
-other Google Maps Platform developers, feel free to open a thread in the
-[discussions section on GitHub][rgm-discuss] or ask a question through one of
-our [developer community channels][gmp-community].
-
-If you'd like to contribute, please check the [Contributing guide][rgm-contrib].
-
-You can also discuss this library on [our Discord server][gmp-discord].
+นอกจากนี้ยังมีช่องทางพูดคุยบน [Discord ของเรา][gmp-discord]
 
 [api-provider]: https://visgl.github.io/react-google-maps/docs/api-reference/components/api-provider
 [api-map]: https://visgl.github.io/react-google-maps/docs/api-reference/components/map
